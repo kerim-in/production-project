@@ -102,5 +102,5 @@
       }
     }
   },
-  "lint" : " eslint --fix --ext .json --format node_modules/eslint-plugin-i18n-json/formatter.js translations/ "
+  "lint": " eslint --fix --ext .json --format node_modules/eslint-plugin-i18n-json/formatter.js translations/ "
 }
