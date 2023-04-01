@@ -5,8 +5,7 @@ export {
 export {
     userReducer,
     userActions,
-} from 'entities/User/model/slice/userSlice';
-
+} from './model/slice/userSlice';
 export {
     UserSchema,
     User,

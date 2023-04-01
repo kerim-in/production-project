@@ -7,13 +7,12 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
     const reducers = { ...initialReducers };
 
     let combinedReducer = combineReducers(reducers);
+
     let keysToRemove: Array<StateSchemaKey> = [];
 
     return {
         getReducerMap: () => reducers,
-
         reduce: (state: StateSchema, action: AnyAction) => {
-            // If any reducers have been removed, clean up their state first
             if (keysToRemove.length > 0) {
                 state = { ...state };
                 keysToRemove.forEach((key) => {
@@ -21,23 +20,20 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
                 });
                 keysToRemove = [];
             }
-
             return combinedReducer(state, action);
         },
-
         add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
                 return;
             }
             reducers[key] = reducer;
+
             combinedReducer = combineReducers(reducers);
         },
-
         remove: (key: StateSchemaKey) => {
             if (!key || !reducers[key]) {
                 return;
             }
-
             delete reducers[key];
             keysToRemove.push(key);
             combinedReducer = combineReducers(reducers);

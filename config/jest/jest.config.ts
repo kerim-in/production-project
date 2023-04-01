@@ -38,9 +38,6 @@ export default {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
-
-    // A set of global variables that need to be available in all test environments
-
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 

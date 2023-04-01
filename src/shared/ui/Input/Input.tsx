@@ -7,11 +7,12 @@ import cls from './Input.module.scss';
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends HTMLInputProps {
-    className?: string
-    value?: string
-    onChange?: (value: string) => void
-    autofocus?: boolean
+    className?: string;
+    value?: string;
+    onChange?: (value: string) => void;
+    autofocus?: boolean;
 }
+
 export const Input = memo((props: InputProps) => {
     const {
         className,
@@ -22,7 +23,6 @@ export const Input = memo((props: InputProps) => {
         autofocus,
         ...otherProps
     } = props;
-
     const ref = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
@@ -42,12 +42,15 @@ export const Input = memo((props: InputProps) => {
     const onBlur = () => {
         setIsFocused(false);
     };
+
     const onFocus = () => {
         setIsFocused(true);
     };
+
     const onSelect = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
+
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (
@@ -74,7 +77,6 @@ export const Input = memo((props: InputProps) => {
                     />
                 )}
             </div>
-
         </div>
     );
 });
