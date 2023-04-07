@@ -36,14 +36,16 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
-        [ValidateProfileError.INCORRECT_COUNTY]: t('Не корректны регион'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Не корректны регион'),
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
         [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value?: string) => {

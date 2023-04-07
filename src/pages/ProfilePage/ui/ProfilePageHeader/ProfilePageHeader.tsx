@@ -16,12 +16,14 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const {
         className,
     } = props;
+
     const { t } = useTranslation('profile');
+
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
 
     const onEdit = useCallback(() => {
-        dispatch(profileActions.setReadOnly(false));
+        dispatch(profileActions.setReadonly(false));
     }, [dispatch]);
 
     const onCancelEdit = useCallback(() => {
@@ -54,7 +56,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         >
                             {t('Отменить')}
                         </Button>
-
                         <Button
                             className={cls.saveBtn}
                             theme={ButtonTheme.OUTLINE}
@@ -64,7 +65,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         </Button>
                     </>
                 )}
-
         </div>
     );
 };

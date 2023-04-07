@@ -1,20 +1,17 @@
-import { Profile } from 'entities/Profile';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { Profile, ValidateProfileError } from '../../types/profile';
 
 export const validateProfileData = (profile?: Profile) => {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
+
     const {
-        first,
-        lastname,
-        age,
-        country,
+        first, lastname, age, country,
     } = profile;
 
     const errors: ValidateProfileError[] = [];
 
-    if (!first || lastname) {
+    if (!first || !lastname) {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA);
     }
 
@@ -23,7 +20,8 @@ export const validateProfileData = (profile?: Profile) => {
     }
 
     if (!country) {
-        errors.push(ValidateProfileError.INCORRECT_COUNTY);
+        errors.push(ValidateProfileError.INCORRECT_COUNTRY);
     }
+
     return errors;
 };
