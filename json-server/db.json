@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -109,7 +111,6 @@
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://govzalla.com/wp-content/uploads/2016/07/unnamed.jpg"
-
     },
     {
       "id": "2",
@@ -119,14 +120,28 @@
       "avatar": "https://govzalla.com/wp-content/uploads/2016/07/unnamed.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgovzalla.com%2Fpersonality%2Fbaisangur-benoevskii&psig=AOvVaw1lPC4yC6vNCAaMOmqIXFC3&ust=1681160027515000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIDF4KnXnf4CFQAAAAAdAAAAABAD"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "fdddf",
+      "lastname": "Wu",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://vsememy.ru/wp-content/cache/thumb/ad731761b_320x200.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Borz",
+      "lastname": "Wu",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://govzalla.com/wp-content/uploads/2016/07/unnamed.jpg"
+    }
+  ]
 }
