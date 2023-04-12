@@ -1,28 +1,27 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useSelector } from 'react-redux';
 import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
 import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import cls from './ArticleDetails.module.scss';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import cls from './ArticleDetails.module.scss';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -38,8 +37,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading);
-    const error = useSelector(getArticleDetailsError);
     const article = useSelector(getArticleDetailsData);
+    const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
@@ -76,7 +75,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         if (__PROJECT__ !== 'storybook') {
             dispatch(fetchArticleById(id));
         }
-    }, [id, dispatch]);
+    }, [dispatch, id]);
 
     let content;
 
@@ -84,10 +83,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <>
                 <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
-                <Skeleton className={cls.title} width={300} height={32} border="" />
-                <Skeleton className={cls.skeleton} width={600} height={24} border="" />
-                <Skeleton className={cls.skeleton} width="100%" height={200} border="" />
-                <Skeleton className={cls.skeleton} width="100%" height={200} border="" />
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
             </>
         );
     } else if (error) {
@@ -132,6 +131,5 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 {content}
             </div>
         </DynamicModuleLoader>
-
     );
 });

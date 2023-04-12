@@ -6,7 +6,6 @@ import ProfilePage from 'pages/ProfilePage/ui/ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/storybook.jpg';
 
 export default {
     title: 'pages/ProfilePage',
@@ -24,12 +23,12 @@ Normal.decorators = [StoreDecorator({
     profile: {
         form: {
             username: 'admin',
-            age: 27,
+            age: 22,
             country: Country.Ukraine,
-            lastname: 'bes',
+            lastname: 'ulbi tv',
             first: 'asd',
+            city: 'asf',
             currency: Currency.USD,
-            avatar,
         },
     },
 })];
@@ -40,12 +39,12 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     profile: {
         form: {
             username: 'admin',
-            age: 27,
+            age: 22,
             country: Country.Ukraine,
-            lastname: 'bes',
+            lastname: 'ulbi tv',
             first: 'asd',
+            city: 'asf',
             currency: Currency.USD,
-            avatar,
         },
     },
 })];

@@ -19,12 +19,12 @@ Normal.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'Hacker' },
+            user: { id: '1', username: 'Vasya' },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Ne Hacker' },
+            user: { id: '1', username: 'Petya' },
         },
     ],
 };

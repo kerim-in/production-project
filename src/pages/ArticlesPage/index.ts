@@ -1,3 +1,3 @@
 export {
-    ArticlesPageAsync as ArticlePage,
+    ArticlesPageAsync as ArticlesPage,
 } from './ui/ArticlesPage/ArticlesPage.async';

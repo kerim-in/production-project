@@ -1,11 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 
 export default {
-    title: 'shared/Avatar',
-    component: Avatar,
+    title: 'shared/Select',
+    component: Select,
     argTypes: {
         backgroundColor: { control: 'color' },
     },

@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from 'entities/Profile';
@@ -24,7 +24,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
     const canEdit = authData?.id === profileData?.id;
-
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
 
@@ -75,7 +74,6 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         )}
                 </div>
             )}
-
         </div>
     );
 };

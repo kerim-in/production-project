@@ -7,7 +7,7 @@ import { Country } from '../../model/types/country';
 interface CountrySelectProps {
     className?: string;
     value?: Country;
-    onChange?: (value: Country) => void
+    onChange?: (value: Country) => void;
     readonly?: boolean;
 }
 
@@ -23,9 +23,11 @@ export const CountrySelect = memo(({
     className, value, onChange, readonly,
 }: CountrySelectProps) => {
     const { t } = useTranslation();
+
     const onChangeHandler = useCallback((value: string) => {
         onChange?.(value as Country);
     }, [onChange]);
+
     return (
         <Select
             className={classNames('', {}, [className])}
