@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
@@ -13,8 +13,8 @@ interface ArticleListProps {
     className?: string;
     articles: Article[]
     isLoading?: boolean;
-    view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    view?: ArticleView;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -35,7 +35,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const isBig = view === ArticleView.BIG;
 
-    const itemsPerRow = isBig ? 1 : 3; // ref.currentWidth / ITEM_WIDTH
+    const itemsPerRow = isBig ? 1 : 3;
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
     const rowRender = ({
@@ -43,7 +43,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
-        const toIndex = Math.min(fromIndex * itemsPerRow, articles.length);
+        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
 
         for (let i = fromIndex; i < toIndex; i += 1) {
             items.push(
@@ -56,6 +56,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 />,
             );
         }
+
         return (
             <div
                 key={key}
@@ -70,14 +71,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                <Text size={TextSize.L} title={t('Статья не найдена')} />
+                <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
     }
 
     return (
         <WindowScroller
-            onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById(PAGE_ID) as Element}
         >
             {({
@@ -87,7 +87,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 onChildScroll,
                 isScrolling,
                 scrollTop,
-                scrollLeft,
             }) => (
                 <div
                     ref={registerChild}
