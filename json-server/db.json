@@ -403,6 +403,12 @@
       "userId": "1",
       "text": "python!!!",
       "id": "p5rMadd"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "text": "sasasa",
+      "id": "YhiKCMx"
     }
   ],
   "users": [
@@ -411,14 +417,14 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://img3.goodfon.ru/wallpaper/nbig/0/c3/one-punch-man-chelovek-v-odin.jpg"
+      "avatar": "https://i.pinimg.com/originals/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://z.animecult.org/uploads/attachment/cover/2932/characters_76038.jpg"
+      "avatar": "https://i.pinimg.com/originals/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg"
     }
   ],
   "profile": [
@@ -431,7 +437,7 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://img3.goodfon.ru/wallpaper/nbig/0/c3/one-punch-man-chelovek-v-odin.jpg"
+      "avatar": "https://i.pinimg.com/originals/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg"
     },
     {
       "id": "2",
@@ -442,7 +448,7 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "ulbi tv",
-      "avatar": "https://z.animecult.org/uploads/attachment/cover/2932/characters_76038.jpg"
+      "avatar": "https://i.pinimg.com/originals/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg"
     }
   ]
 }
