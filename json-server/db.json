@@ -252,8 +252,6 @@
         }
       ]
     },
-
-
     {
       "id": "6",
       "title": "Java news",
@@ -429,7 +427,7 @@
       "first": "jghwer",
       "lastname": "asfewr",
       "age": 465,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
