@@ -17,7 +17,7 @@ interface ArticleListProps {
     view?: ArticleView;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 4)
     .fill(0)
     .map((item, index) => (
         <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
@@ -35,7 +35,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const isBig = view === ArticleView.BIG;
 
-    const itemsPerRow = isBig ? 1 : 3;
+    const itemsPerRow = isBig ? 1 : 4;
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
     const rowRender = ({
