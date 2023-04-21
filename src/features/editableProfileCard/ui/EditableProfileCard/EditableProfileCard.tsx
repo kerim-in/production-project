@@ -9,19 +9,16 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-    EditableProfileCardHeader,
-} from 'features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from 'shared/ui/Stack';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
-import cls from './EditableProfileCard.module.scss';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -35,6 +32,7 @@ const reducers: ReducersList = {
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile');
+
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -90,13 +88,18 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap="8" max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack
+                gap="8"
+                max
+                className={classNames('', {}, [className])}
+            >
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard
@@ -115,6 +118,5 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 />
             </VStack>
         </DynamicModuleLoader>
-
     );
 });
