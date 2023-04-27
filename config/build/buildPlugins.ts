@@ -31,7 +31,7 @@ export function buildPlugins({
             ],
         }),
         new CircularDependencyPlugin({
-            exclude: /node_module/,
+            exclude: /node_modules/,
             failOnError: true,
         }),
         new ForkTsCheckerWebpackPlugin({

@@ -7124,13 +7124,6 @@
     "eslint-utils" "^2.0.0"
     "regexpp" "^3.0.0"
 
-"eslint-plugin-halid-plugin@^0.0.1":
-  "integrity" "sha512-uLnfHtGvUBAfIdFOXGq+ON6rjyO9lT6XOCFhiZGUM8KfzZxKTVwDAAEbKIIjLFa1SilzkSO93dsPDkJHhSC5Ug=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-halid-plugin/-/eslint-plugin-halid-plugin-0.0.1.tgz"
-  "version" "0.0.1"
-  dependencies:
-    "requireindex" "^1.2.0"
-
 "eslint-plugin-i18next@^5.1.2":
   "integrity" "sha512-YuJWaio8BE7eoWE2V3UnddwJhf3XNQ2tb7XAKZhbkeA+BWzm33ujOv6Ezm98Wjc8VCyT9NJvDyvs5/a9AG4QpQ=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-i18next/-/eslint-plugin-i18next-5.1.2.tgz"
@@ -7230,6 +7223,13 @@
     "@typescript-eslint/utils" "^5.45.0"
     "requireindex" "^1.1.0"
     "ts-dedent" "^2.2.0"
+
+"eslint-plugin-ulbi-tv-plugin@^0.0.2":
+  "integrity" "sha512-l5oNjLaHc9VVmEZdgbEAUVVHrbOH2At5wzCrMrx/21HNtFsBkg06prHC6uVj926cQQnOH1eHAFApq/b3mR2/AA=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.2.tgz"
+  "version" "0.0.2"
+  dependencies:
+    "requireindex" "^1.2.0"
 
 "eslint-scope@^4.0.3":
   "integrity" "sha512-p7VutNr1O/QrxysMo3E45FjYDTeXBy0iTltPFNSqKAIfjDSXC+4dj+qfyuD8bfAXrW/y6lW3O76VaYNPKfpKrg=="
