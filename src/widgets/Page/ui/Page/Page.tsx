@@ -1,18 +1,18 @@
 import {
-    memo, MutableRefObject, ReactNode, useRef, UIEvent,
+    memo, MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getScrollSave, scrollSaveActions } from '@/widgets/ScrollSave';
+
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { getScrollSaveByPath } from '@/widgets/ScrollSave/model/selectors/scrollSave';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
+import { getScrollSaveByPath } from '../../../ScrollSave/model/selectors/scrollSave';
+import { scrollSaveActions } from '../../../ScrollSave';
 
 interface PageProps {
     className?: string;

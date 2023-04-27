@@ -11,7 +11,7 @@ interface ArticleRatingProps {
     articleId: string;
 }
 
-const ArticleRating = memo((props: ArticleRatingProps) => {
+export const ArticleRating = memo((props: ArticleRatingProps) => {
     const { className, articleId } = props;
     const { t } = useTranslation();
     const userData = useSelector(getUserAuthData);
@@ -61,5 +61,3 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         />
     );
 });
-
-export default ArticleRating;
