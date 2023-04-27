@@ -7224,10 +7224,10 @@
     "requireindex" "^1.1.0"
     "ts-dedent" "^2.2.0"
 
-"eslint-plugin-ulbi-tv-plugin@^0.0.2":
-  "integrity" "sha512-l5oNjLaHc9VVmEZdgbEAUVVHrbOH2At5wzCrMrx/21HNtFsBkg06prHC6uVj926cQQnOH1eHAFApq/b3mR2/AA=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.2.tgz"
-  "version" "0.0.2"
+"eslint-plugin-ulbi-tv-plugin@^0.0.3":
+  "integrity" "sha512-2ui5LAdCBp3eQ/sNIvKXhONt5ozysVW9s6QVDgZjlszSqCYIAzyukhFx4jdOhejf0j+mbTxKQo4tI5id0SCW4g=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.3.tgz"
+  "version" "0.0.3"
   dependencies:
     "requireindex" "^1.2.0"
 

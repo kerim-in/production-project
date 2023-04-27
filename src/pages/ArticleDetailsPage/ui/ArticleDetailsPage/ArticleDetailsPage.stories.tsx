@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Article } from '@/entities/Article';
-import { ArticleType } from '@/entities/Article/model/types/article';
+import { Article, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleBlockType } from '@/entities/Article/model/consts/articleConsts';
 import ArticleDetailsPage from './ArticleDetailsPage';
+// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
+import { ArticleBlockType } from '@/entities/Article/model/types/article';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
