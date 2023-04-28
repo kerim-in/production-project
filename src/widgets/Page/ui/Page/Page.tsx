@@ -11,8 +11,8 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
-import { getScrollSaveByPath } from '../../../ScrollSave/model/selectors/scrollSave';
-import { scrollSaveActions } from '../../../ScrollSave';
+import { getScrollSaveByPath } from '../../../../features/ScrollSave/model/selectors/scrollSave';
+import { scrollSaveActions } from '../../../../features/ScrollSave';
 
 interface PageProps {
     className?: string;
