@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from '@/shared/ui/Button/Button';
-import { classNames } from './classNames';
+import { Button } from '@/shared/ui/Button';
 
 describe('classNames', () => {
     test('with only first param', () => {
