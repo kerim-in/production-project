@@ -51,6 +51,7 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
     const rating = data?.[0];
     return (
         <RatingCard
+            data-testid="ArticleRating"
             onCancel={onCancel}
             onAccept={onAccept}
             rate={rating?.rate}
