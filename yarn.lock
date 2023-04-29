@@ -7449,10 +7449,10 @@
     "requireindex" "^1.1.0"
     "ts-dedent" "^2.2.0"
 
-"eslint-plugin-ulbi-tv-plugin@^0.0.7":
-  "integrity" "sha512-uq6CzDsrW8CJ9OHv+p1m3kpkj19whdr/9jQAfxK+5v/Ni+h01OdpeS09uB/cn7gOaCYxsT6r7cEVkG3609n6/A=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.7.tgz"
-  "version" "0.0.7"
+"eslint-plugin-ulbi-tv-plugin@^0.0.10":
+  "integrity" "sha512-/PGwMEzTH9R6rKBSCh1/DGMmf3Yp+zGnlu8sXFmbWdwaeO3LIqL3nj5baABa3cD0ooRm8sMB3Ok2SsNXI3Xabw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-ulbi-tv-plugin/-/eslint-plugin-ulbi-tv-plugin-0.0.10.tgz"
+  "version" "0.0.10"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
