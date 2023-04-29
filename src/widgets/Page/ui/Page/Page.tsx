@@ -13,7 +13,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { getScrollSaveByPath } from '../../../../features/ScrollSave/model/selectors/scrollSave';
 import { scrollSaveActions } from '../../../../features/ScrollSave';
-import { TestProps } from '@/shared/types/test';
+import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps{
     className?: string;
